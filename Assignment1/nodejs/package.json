@@ -1,0 +1,14 @@
+{
+  "name": "hello-asl",
+  "version": "1.0.0",
+  "description": "A simple Node.js script that prints Hello ASL and the current date.",
+  "main": "hello_asl.js",
+  "scripts": {
+    "start": "node hello_asl.js"
+  },
+  "dependencies": {
+    "date-fns": "^2.30.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
