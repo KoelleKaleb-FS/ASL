@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  <title>Planets</title>
+</head>
+<body>
+  <%- include('../partials/header') %>
+  <h1>Planets</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Size</th>
+        <th>Image</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (planets && planets.length > 0) { %>
+        <% planets.forEach(function(planet) { %>
+          <tr>
+            <td><%= planet.name %></td>
+            <td><%= planet.description %></td>
+            <td><%= planet.size %></td>
+            <td>
+              <% if (planet.imagePath) { %>
+                <img src="/uploads/<%= planet.imagePath %>" alt="<%= planet.name %>" width="100">
+              <% } else { %>
+                No Image
+              <% } %>
+            </td>
+            <td>
+              <a href="/planets/<%= planet.id %>">View</a>
+              <a href="/planets/<%= planet.id %>/edit">Edit</a>
+              <form action="/planets/<%= planet.id %>?_method=DELETE" method="POST" style="display:inline;">
+                <button type="submit">Delete</button>
+              </form>
+              
+            </td>
+          </tr>
+        <% }); %>
+      <% } else { %>
+        <tr>
+          <td colspan="5">No planets found</td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+  <a href="/planets/new">Create New Planet</a>
+  <%- include('../partials/footer') %>
+</body>
+</html>

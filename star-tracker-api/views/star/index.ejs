@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star List</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <header>
+        <h1>Star List</h1>
+        <a href="/stars/new">Add New Star</a>
+    </header>
+    <main>
+        <ul>
+            <% stars.forEach(star => { %>
+                <li>
+                    <a href="/stars/<%= star.id %>"><%= star.name %></a>
+                    - <a href="/stars/<%= star.id %>/planets">View Planets</a>
+                </li>
+            <% }); %>
+        </ul>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

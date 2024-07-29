@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= star.name %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <h1><%= star.name %></h1>
+        <p><strong>Description:</strong> <%= star.description %></p>
+        <p><strong>Size:</strong> <%= star.size %></p>
+        <% if (star.imagePath) { %>
+            <img src="/uploads/<%= star.imagePath %>" alt="<%= star.name %>">
+        <% } %>
+        <a href="/stars/<%= star.id %>/edit">Edit</a>
+        <form action="/stars/<%= star.id %>?_method=DELETE" method="POST" style="display:inline;">
+            <button type="submit">Delete</button>
+        </form>
+        <a href="/stars">Back to list</a>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

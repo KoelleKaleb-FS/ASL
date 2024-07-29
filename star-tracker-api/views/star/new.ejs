@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Star</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <header>
+        <h1>Create New Star</h1>
+        <a href="/stars">Back to List</a>
+    </header>
+    <main>
+        <form action="/stars" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="size">Size:</label>
+            <input type="number" id="size" name="size" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"></textarea>
+
+            <label for="galaxy">Galaxy ID:</label>
+            <input type="number" id="galaxy" name="galaxyId">
+
+            <button type="submit">Create Star</button>
+        </form>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planets for <%= star.name %></title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <header>
+        <h1>Planets for <%= star.name %></h1>
+        <a href="/stars/<%= star.id %>">Back to Star</a>
+    </header>
+    <main>
+        <ul>
+            <% planets.forEach(planet => { %>
+                <li><%= planet.name %></li>
+            <% }); %>
+        </ul>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

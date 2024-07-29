@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+<h1><%= galaxy.name %></h1>
+<p>Size: <%= galaxy.size %></p>
+<p>Description: <%= galaxy.description %></p>
+<% if (galaxy.imagePath) { %>
+  <img src="/<%= galaxy.imagePath %>" alt="<%= galaxy.name %>">
+<% } %>
+<a href="/galaxies/<%= galaxy.id %>/edit">Edit</a>
+<form action="/galaxies/<%= galaxy.id %>?_method=DELETE" method="POST" style="display:inline;">
+  <button type="submit">Delete</button>
+</form>
+<a href="/galaxies">Back to Galaxies</a>
+<%- include('../partials/footer') %>

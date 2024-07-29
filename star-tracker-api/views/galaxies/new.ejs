@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Galaxy</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+  <%- include('../partials/header') %>
+  <h1>Create New Galaxy</h1>
+  <form action="/galaxies" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br>
+    <label for="size">Size:</label>
+    <input type="number" id="size" name="size" required><br>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description"></textarea><br>
+    <button type="submit">Create</button>
+  </form>
+  <a href="/galaxies">Back to Galaxies</a>
+  <%- include('../partials/footer') %>
+</body>
+</html>

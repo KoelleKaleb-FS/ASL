@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Galaxies</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+  <%- include('../partials/header') %>
+  <h1>Galaxies</h1>
+  <ul>
+    <% galaxies.forEach(galaxy => { %>
+      <li><a href="/galaxies/<%= galaxy.id %>"><%= galaxy.name %></a></li>
+    <% }) %>
+  </ul>
+  <a href="/galaxies/new">Create New Galaxy</a>
+  <%- include('../partials/footer') %>
+</body>
+</html>

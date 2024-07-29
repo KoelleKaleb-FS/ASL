@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  <title>Edit Planet</title>
+</head>
+<body>
+  <%- include('../partials/header') %>
+  <h1>Edit Planet</h1>
+  <form action="/planets/<%= planet.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="<%= planet.name %>" required>
+    <br>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" required><%= planet.description %></textarea>
+    <br>
+    <label for="size">Size:</label>
+    <input type="text" id="size" name="size" value="<%= planet.size %>" required>
+    <br>
+    <label for="image">Image:</label>
+    <input type="file" id="image" name="image">
+    <% if (planet.imagePath) { %>
+      <p>Current Image:</p>
+      <img src="/<%= planet.imagePath %>" alt="<%= planet.name %>">
+    <% } %>
+    <br>
+    <button type="submit">Update</button>
+  </form>
+  <a href="/planets">Back to Planets</a>
+  <%- include('../partials/footer') %>
+</body>
+</html>
